@@ -32,7 +32,7 @@ void minmaxAllListsFork(int **numbers, int nList, int *nElem){
             }
             char name[12];
             int minmax[2];
-            snprintf(name, 12, "minmax-<%d>", i);
+            snprintf(name, 12, "minmax-%d", i);
             minmax[0] = min;
             minmax[1] = max;
             writeBinary(name, minmax);
@@ -66,5 +66,19 @@ int main(){
     int nList = 3;
     int nElem[3] = {5, 5, 5};
     minmaxAllListsFork(numbers, nList, nElem);
+    /**
+    *Read from binary files.
+    */
+    char buffer[10];
+    FILE *fileptr;
+    fileptr = fopen("minmax-<0>","rb");
+    fread(buffer, sizeof(buffer), 1, fileptr);
+    printf("Minmax 0: %s\n", buffer);
+    fileptr = fopen("minmax-<1>","rb");
+    fread(buffer, sizeof(buffer), 1, fileptr);
+    printf("Minmax 1: %s\n", buffer);
+    fileptr = fopen("minmax-<2>","rb");
+    fread(buffer, sizeof(buffer), 1, fileptr);
+    printf("Minmax 2: %s\n", buffer);
     return 1;
 }
