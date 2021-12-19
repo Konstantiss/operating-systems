@@ -71,13 +71,13 @@ int main(){
     */
     char buffer[10];
     FILE *fileptr;
-    fileptr = fopen("minmax-<0>","rb");
+    fileptr = fopen("minmax-0","rb");
     fread(buffer, sizeof(buffer), 1, fileptr);
     printf("Minmax 0: %s\n", buffer);
-    fileptr = fopen("minmax-<1>","rb");
+    fileptr = fopen("minmax-1","rb");
     fread(buffer, sizeof(buffer), 1, fileptr);
     printf("Minmax 1: %s\n", buffer);
-    fileptr = fopen("minmax-<2>","rb");
+    fileptr = fopen("minmax-2","rb");
     fread(buffer, sizeof(buffer), 1, fileptr);
     printf("Minmax 2: %s\n", buffer);
     return 1;
