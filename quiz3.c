@@ -40,7 +40,6 @@ void minmaxAllListsFork(int **numbers, int nList, int *nElem){
         }
     }
 
-    /* Wait for children to exit. */
     pid_t pid;
     while (n > 0) {
         pid = wait(&status);
@@ -66,6 +65,7 @@ int main(){
     int nList = 3;
     int nElem[3] = {5, 5, 5};
     minmaxAllListsFork(numbers, nList, nElem);
+    
     /**
     *Read from binary files.
     */
