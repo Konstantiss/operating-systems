@@ -19,10 +19,8 @@ void minmaxAllListsFork(int **numbers, int nList, int *nElem){
     for (i = 0; i < n; ++i) {
         if ((pids[i] = fork()) < 0) {
             printf("Fork error\n");
-            //abort();
             exit(0);
         } else if (pids[i] == 0) {
-            //printf("I'm child %d\n", i);
             int j;
             int min = INT_MIN;
             int max = INT_MAX;
@@ -65,7 +63,7 @@ int main(){
     int nList = 3;
     int nElem[3] = {5, 5, 5};
     minmaxAllListsFork(numbers, nList, nElem);
-    
+
     /**
     *Read from binary files.
     */
