@@ -22,8 +22,8 @@ void minmaxAllListsFork(int **numbers, int nList, int *nElem){
             exit(0);
         } else if (pids[i] == 0) {
             int j;
-            int min = INT_MIN;
-            int max = INT_MAX;
+            int min = INT_MAX;
+            int max = INT_MIN;
             for (j = 0; j < nElem[i]; j++){
                 if(min>numbers[i][j]) min=numbers[i][j];   
 		        if(max<numbers[i][j])max=numbers[i][j];    
